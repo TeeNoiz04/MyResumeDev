@@ -1,0 +1,33 @@
+@import "tailwindcss";
+/* Tùy chỉnh thanh cuộn cho toàn bộ trang */
+
+/* 1. Độ rộng của thanh cuộn */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* 2. Phần nền (Track) */
+::-webkit-scrollbar-track {
+  background: #fff5ed;       /* Màu cam cực nhạt để hợp tone */
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1a1a1a;       /* Nền tối sâu để màu cam nổi bật hơn */
+}
+
+/* 3. Phần thanh trượt (Thumb) */
+::-webkit-scrollbar-thumb {
+  /* Sử dụng đúng dải màu bạn đề xuất */
+  background: linear-gradient(to bottom, #f5b47c, #c33c03); 
+  border-radius: 10px;
+  /* Tạo khoảng trống để thanh cuộn trông thanh thoát hơn */
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* 4. Hiệu ứng khi di chuột vào (Hover) */
+::-webkit-scrollbar-thumb:hover {
+  /* Đảo ngược gradient hoặc dùng màu đậm hơn để tạo hiệu ứng tương tác */
+  background: #c33c03; 
+}
