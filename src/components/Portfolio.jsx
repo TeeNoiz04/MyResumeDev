@@ -119,7 +119,7 @@ const Portfolio = () => {
               </motion.p>
 
               <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-bold text-white">
-                Business <span className="text-orange-500">Analyst</span>
+                Fullstack <span className="text-orange-500">Developer</span>
               </motion.h1>
 
               <motion.div variants={itemVariants}>

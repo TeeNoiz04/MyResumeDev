@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Briefcase, Calendar, MapPin, ChevronDown, ChevronUp, Award, Code, Users, TrendingUp } from 'lucide-react';
 
 const ExperienceTree = () => {
@@ -11,6 +11,9 @@ const ExperienceTree = () => {
     }));
   };
 
+  useEffect(() => {
+    setExpandedItems({ 1: true });
+  }, []);
   const experiences = [
     {
       id: 1,
