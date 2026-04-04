@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { Download } from "lucide-react";
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 const PortfolioGallery = () => {
-  const [activeTab, setActiveTab] = useState('all');
+  const [activeTab, setActiveTab] = useState("all");
   const [selectedItem, setSelectedItem] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const portfolioItems = [
     {
       id: 1,
-      category: 'erp',
-      title: 'Product Management Module',
+      category: "erp",
+      title: "Product Management Module",
       description: `
           User Stories:
           - As a user, I want to view the product list so that I can easily manage all products in the system.
@@ -26,27 +26,27 @@ const PortfolioGallery = () => {
           `,
       images: [
         {
-          src: '/img/product-list.png',
-          title: 'Product List Overview'
+          src: "/img/product-list.png",
+          title: "Product List Overview",
         },
         {
-          src: '/img/product-create.png',
-          title: 'Create New Product'
+          src: "/img/product-create.png",
+          title: "Create New Product",
         },
         {
-          src: '/img/product-create-2.png',
-          title: 'Create Product Information'
+          src: "/img/product-create-2.png",
+          title: "Create Product Information",
         },
         {
-          src: '/img/product-update.png',
-          title: 'Update Product Information'
-        }
-      ]
+          src: "/img/product-update.png",
+          title: "Update Product Information",
+        },
+      ],
     },
     {
       id: 2,
-      category: 'erp',
-      title: 'Product Category Management Module',
+      category: "erp",
+      title: "Product Category Management Module",
       description: `
           User Stories:
           - As a user, I want to view the category list so that I can understand the product classification structure.
@@ -56,27 +56,26 @@ const PortfolioGallery = () => {
 
           Module Overview:
           This product category management module enables hierarchical organization of products using parent–child categories. It supports creating, updating, and deleting categories, improving product classification, navigation, reporting, and scalability across the ERP system.
-          `
-      ,
+          `,
       images: [
         {
-          src: '/img/category-list.png',
-          title: 'Category List Overview'
+          src: "/img/category-list.png",
+          title: "Category List Overview",
         },
         {
-          src: '/img/category-create.png',
-          title: 'Create New Category'
+          src: "/img/category-create.png",
+          title: "Create New Category",
         },
         {
-          src: '/img/category-update.png',
-          title: 'Update Category Information'
+          src: "/img/category-update.png",
+          title: "Update Category Information",
         },
-      ]
+      ],
     },
     {
       id: 3,
-      category: 'erp',
-      title: 'Product Pricing Management Module',
+      category: "erp",
+      title: "Product Pricing Management Module",
       description: `
         User Stories:
         - As a user, I want to view product pricing information so that I can understand current prices.
@@ -89,23 +88,23 @@ const PortfolioGallery = () => {
 
       images: [
         {
-          src: '/img/product-price-list.png',
-          title: 'Product Price List Overview'
+          src: "/img/product-price-list.png",
+          title: "Product Price List Overview",
         },
         {
-          src: '/img/product-price-detail.png',
-          title: 'Product Price Details'
+          src: "/img/product-price-detail.png",
+          title: "Product Price Details",
         },
         {
-          src: '/img/product-price-create.png',
-          title: 'Add New Product Price'
-        }
-      ]
+          src: "/img/product-price-create.png",
+          title: "Add New Product Price",
+        },
+      ],
     },
     {
       id: 4,
-      category: 'erp',
-      title: 'Promotion Management Module',
+      category: "erp",
+      title: "Promotion Management Module",
       description: `
           User Stories:
           - As a user, I want to view the promotion list so that I can monitor all promotional programs.
@@ -119,23 +118,23 @@ const PortfolioGallery = () => {
 
       images: [
         {
-          src: '/img/promotion-list.png',
-          title: 'Promotion List Overview'
+          src: "/img/promotion-list.png",
+          title: "Promotion List Overview",
         },
         {
-          src: '/img/promotion-create.png',
-          title: 'Create New Promotion'
+          src: "/img/promotion-create.png",
+          title: "Create New Promotion",
         },
         {
-          src: '/img/promotion-list-detail.png',
-          title: 'Watch Detail Promotion Information'
-        }
-      ]
+          src: "/img/promotion-list-detail.png",
+          title: "Watch Detail Promotion Information",
+        },
+      ],
     },
     {
       id: 5,
-      category: 'erp',
-      title: 'Stock Out Management Module',
+      category: "erp",
+      title: "Stock Out Management Module",
       description: `
         User Stories:
         - As a user, I want to view the warehouse list so that I can select the correct warehouse for stock out operations.
@@ -148,27 +147,27 @@ const PortfolioGallery = () => {
         `,
       images: [
         {
-          src: '/img/warehouse-list.png',
-          title: 'Warehouse List Overview'
+          src: "/img/warehouse-list.png",
+          title: "Warehouse List Overview",
         },
         {
-          src: '/img/stock-out-create.png',
-          title: 'Create Stock Out Voucher'
+          src: "/img/stock-out-create.png",
+          title: "Create Stock Out Voucher",
         },
         {
-          src: '/img/stock-out-create-2.png',
-          title: 'Create Stock Out Voucher'
+          src: "/img/stock-out-create-2.png",
+          title: "Create Stock Out Voucher",
         },
         {
-          src: '/img/stock-out-create-3.png',
-          title: 'Create Stock Out Voucher'
+          src: "/img/stock-out-create-3.png",
+          title: "Create Stock Out Voucher",
         },
-      ]
+      ],
     },
     {
       id: 6,
-      category: 'social_media',
-      title: 'Social Media Post Management Module',
+      category: "social_media",
+      title: "Social Media Post Management Module",
       description: `
             User Stories:
             - As a user, I want to create new posts so that I can share my thoughts, images, or information with others.
@@ -182,27 +181,27 @@ const PortfolioGallery = () => {
             `,
       images: [
         {
-          src: '/img/post-list.png',
-          title: 'Post Feed Overview'
+          src: "/img/post-list.png",
+          title: "Post Feed Overview",
         },
         {
-          src: '/img/post-create.png',
-          title: 'Create New Post'
+          src: "/img/post-create.png",
+          title: "Create New Post",
         },
         {
-          src: '/img/post-detail.png',
-          title: 'Post Details with Likes and Comments'
+          src: "/img/post-detail.png",
+          title: "Post Details with Likes and Comments",
         },
         {
-          src: '/img/post-report.png',
-          title: 'Report Inappropriate Content'
-        }
-      ]
+          src: "/img/post-report.png",
+          title: "Report Inappropriate Content",
+        },
+      ],
     },
     {
       id: 7,
-      category: 'social_media',
-      title: 'Admin Post Management Module',
+      category: "social_media",
+      title: "Admin Post Management Module",
       description: `
       User Stories:
       - As an admin, I want to view all user posts so that I can monitor platform content effectively.
@@ -216,31 +215,31 @@ const PortfolioGallery = () => {
       `,
       images: [
         {
-          src: '/img/admin-post-list.png',
-          title: 'Admin Post List Management'
+          src: "/img/admin-post-list.png",
+          title: "Admin Post List Management",
         },
         {
-          src: '/img/admin-post-report.png',
-          title: 'Reported Posts Review'
+          src: "/img/admin-post-report.png",
+          title: "Reported Posts Review",
         },
         {
-          src: '/img/admin-post-detail.png',
-          title: 'Admin Post Moderation Details'
+          src: "/img/admin-post-detail.png",
+          title: "Admin Post Moderation Details",
         },
         {
-          src: '/img/admin-post-create.png',
-          title: 'Create Post as Admin'
+          src: "/img/admin-post-create.png",
+          title: "Create Post as Admin",
         },
         {
-          src: '/img/admin-post-update.png',
-          title: 'Update Post Status (Approve / Hide / Delete)'
-        }
-      ]
+          src: "/img/admin-post-update.png",
+          title: "Update Post Status (Approve / Hide / Delete)",
+        },
+      ],
     },
     {
       id: 8,
-      category: 'social_media',
-      title: 'Admin User Management Module',
+      category: "social_media",
+      title: "Admin User Management Module",
       description: `
       User Stories:
       - As an admin, I want to view a list of users so that I can monitor all registered accounts on the platform.
@@ -256,27 +255,27 @@ const PortfolioGallery = () => {
       `,
       images: [
         {
-          src: '/img/admin-user-list.png',
-          title: 'Admin User List'
+          src: "/img/admin-user-list.png",
+          title: "Admin User List",
         },
         {
-          src: '/img/admin-user-detail.png',
-          title: 'Admin User Details'
+          src: "/img/admin-user-detail.png",
+          title: "Admin User Details",
         },
         {
-          src: '/img/admin-user-update.png',
-          title: 'Update User Account Information'
+          src: "/img/admin-user-update.png",
+          title: "Update User Account Information",
         },
         {
-          src: '/img/admin-user-create.png',
-          title: 'Create User Account'
-        }
-      ]
+          src: "/img/admin-user-create.png",
+          title: "Create User Account",
+        },
+      ],
     },
     {
       id: 9,
-      category: 'social_media',
-      title: 'Admin Analytics & AI Dashboard Module',
+      category: "social_media",
+      title: "Admin Analytics & AI Dashboard Module",
       description: `
         User Stories:
         - As an admin, I want to view an overview dashboard so that I can quickly understand platform activity and user engagement.
@@ -294,50 +293,211 @@ const PortfolioGallery = () => {
         `,
       images: [
         {
-          src: '/img/admin-dashboard-overview.png',
-          title: 'Admin Analytics Dashboard Overview'
+          src: "/img/admin-dashboard-overview.png",
+          title: "Admin Analytics Dashboard Overview",
         },
         {
-          src: '/img/sentiment-analysis.png',
-          title: 'AI Sentiment Analysis (Positive / Negative / Neutral)'
+          src: "/img/sentiment-analysis.png",
+          title: "AI Sentiment Analysis (Positive / Negative / Neutral)",
         },
         {
-          src: '/img/sentiment-analysis-2.png',
-          title: 'AI Sentiment Analysis (Positive / Negative / Neutral)'
+          src: "/img/sentiment-analysis-2.png",
+          title: "AI Sentiment Analysis (Positive / Negative / Neutral)",
         },
-      ]
-    }
+      ],
+    },
+    {
+      id: 11,
+      category: "asset_management",
+      title: "FATA Category Module",
+      description: `
+    User Stories:
+    - As a user, I want to create and manage asset categories so that assets can be classified systematically.
+    - As a user, I want to update category information so that asset classification remains accurate.
+    - As a user, I want to deactivate unused categories so that the system stays clean and relevant.
 
+    Module Overview:
+    This module manages asset categorization, allowing users to define and organize asset types. 
+    It ensures consistent classification across the system, supporting better reporting and asset tracking.
+  `,
+      images: [
+        {
+          src: "/img/fata_category.png",
+          title: "FATA Category Module",
+        },
+        {
+          src: "/img/menu.png",
+          title: "Asset Management Menu Overview",
+        },
+      ],
+    },
+    {
+      id: 12,
+      category: "asset_management",
+      title: "Internal Warehouse Transfer Module",
+      description: `
+    User Stories:
+    - As a user, I want to create transfer requests so that assets can be moved between warehouses.
+    - As a user, I want to track transfer status so that I know where assets are.
+    - As a warehouse staff, I want to confirm transfers so that inventory is accurate.
 
+    Module Overview:
+    This module handles internal asset movement between warehouses or locations. 
+    It ensures traceability and maintains accurate inventory records across the organization.
+  `,
+      images: [
+        {
+          src: "/img/internalwarehouse.png",
+          title: "Internal Warehouse Transfer Module",
+        },
+      ],
+    },
+    {
+      id: 13,
+      category: "asset_management",
+      title: "FATA Approval Module",
+      description: `
+    User Stories:
+    - As an approver, I want to review asset-related requests so that I can approve or reject them.
+    - As an approver, I want to see request details so that I can make informed decisions.
+    - As a user, I want to track approval status so that I know my request progress.
 
+    Module Overview:
+    This module manages the approval workflow for all FATA processes such as transfer, lending, and liquidation. 
+    It ensures that all operations are validated before execution, improving governance and control.
+  `,
+      images: [
+        {
+          src: "/img/fataApproval.png",
+          title: "FATA Approval Module",
+        },
+      ],
+    },
+    {
+      id: 14,
+      category: "asset_management",
+      title: "PIC Transfer Module",
+      description: `
+    User Stories:
+    - As a user, I want to transfer asset ownership (PIC) so that responsibility is assigned correctly.
+    - As a manager, I want to approve PIC transfers so that ownership changes are controlled.
+    - As a user, I want to view PIC history so that I can track responsibility changes.
 
+    Module Overview:
+    This module handles the transfer of asset responsibility (Person In Charge - PIC). 
+    It ensures accountability by maintaining clear ownership records and tracking changes over time.
+  `,
+      images: [
+        {
+          src: "/img/picTransfer.png",
+          title: "PIC Transfer Module",
+        },
+        {
+          src: "/img/pictranfer_detail.png",
+          title: "PIC Transfer Detail Module",
+        },
+      ],
+    },
+    {
+      id: 15,
+      category: "asset_management",
+      title: "FATA Lending Module",
+      description: `
+    User Stories:
+    - As a user, I want to borrow assets so that I can use them temporarily.
+    - As a user, I want to return borrowed assets so that inventory is updated correctly.
+    - As a manager, I want to track overdue items so that I can ensure timely returns.
 
+    Module Overview:
+    This module manages asset lending and borrowing processes. 
+    It tracks lending status, due dates, and returns, helping ensure assets are properly utilized and controlled.
+  `,
+      images: [
+        {
+          src: "/img/fataLending.png",
+          title: "FATA Lending Module",
+        },
+        {
+          src: "/img/assetlending_detail.png",
+          title: "FATA Lending Detail Module",
+        },
+      ],
+    },
+    {
+      id: 16,
+      category: "asset_management",
+      title: "FATA Liquidation Module",
+      description: `
+    User Stories:
+    - As a user, I want to create liquidation requests so that unused or damaged assets can be disposed.
+    - As an approver, I want to review liquidation requests so that disposal follows policy.
+    - As a user, I want to track liquidation status so that I know when assets are removed.
 
+    Module Overview:
+    This module manages asset disposal and liquidation processes. 
+    It ensures that assets are retired properly with approval and full traceability.
+  `,
+      images: [
+        {
+          src: "/img/liquidation.png",
+          title: "FATA Liquidation Module",
+        },
+        {
+          src: "/img/liquidation_detail.png",
+          title: "FATA Liquidation Detail Module",
+        },
+      ],
+    },
+    {
+      id: 17,
+      category: "asset_management",
+      title: "FATA Audit Module",
+      description: `
+    User Stories:
+    - As an auditor, I want to perform asset audits so that I can verify asset existence and condition.
+    - As an auditor, I want to record audit results so that discrepancies are tracked.
+    - As a manager, I want to view audit reports so that I can ensure compliance.
 
+    Module Overview:
+    This module supports asset auditing processes, allowing verification of asset data against actual conditions. 
+    It helps detect discrepancies and ensures compliance with asset management policies.
+  `,
+      images: [
+        {
+          src: "/img/audit.png",
+          title: "FATA Audit Module",
+        },
+        {
+          src: "/img/audit_detail.png",
+          title: "FATA Audit Module",
+        },
+      ],
+    },
   ];
 
-  const filteredItems = activeTab === 'all'
-    ? portfolioItems
-    : portfolioItems.filter(item => item.category === activeTab);
+  const filteredItems =
+    activeTab === "all"
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.category === activeTab);
 
   const openModal = (item) => {
     setSelectedItem(item);
     setCurrentImageIndex(0);
     // Prevent body scroll when modal opens
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setSelectedItem(null);
     setCurrentImageIndex(0);
     // Re-enable body scroll when modal closes
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
   };
 
   // Cleanup on unmount
   React.useEffect(() => {
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, []);
 
@@ -348,7 +508,7 @@ const PortfolioGallery = () => {
   const nextImage = () => {
     if (selectedItem) {
       setCurrentImageIndex((prev) =>
-        prev === selectedItem.images.length - 1 ? 0 : prev + 1
+        prev === selectedItem.images.length - 1 ? 0 : prev + 1,
       );
     }
   };
@@ -356,7 +516,7 @@ const PortfolioGallery = () => {
   const prevImage = () => {
     if (selectedItem) {
       setCurrentImageIndex((prev) =>
-        prev === 0 ? selectedItem.images.length - 1 : prev - 1
+        prev === 0 ? selectedItem.images.length - 1 : prev - 1,
       );
     }
   };
@@ -366,13 +526,13 @@ const PortfolioGallery = () => {
       if (!selectedItem) return;
 
       switch (event.key) {
-        case 'Escape':
+        case "Escape":
           closeModal();
           break;
-        case 'ArrowRight':
+        case "ArrowRight":
           nextImage(); // Gọi hàm chuyển ảnh tiếp theo của bạn
           break;
-        case 'ArrowLeft':
+        case "ArrowLeft":
           prevImage(); // Gọi hàm quay lại ảnh trước của bạn
           break;
         default:
@@ -381,11 +541,11 @@ const PortfolioGallery = () => {
     };
 
     // Đăng ký sự kiện khi component mount hoặc selectedItem thay đổi
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
 
     // Quan trọng: Cleanup để tránh rò rỉ bộ nhớ khi đóng Modal
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [selectedItem, currentImageIndex]); // dependencies đảm bảo hàm có dữ liệu mới nhất
   return (
@@ -401,17 +561,19 @@ const PortfolioGallery = () => {
       {/* Filter Tabs */}
       <div className="flex flex-wrap justify-center gap-4 mb-12">
         {[
-          { key: 'all', label: 'See All' },
-          { key: 'erp', label: 'ERP System' },
-          { key: 'social_media', label: 'Social Media Platform' },
+          { key: "all", label: "See All" },
+          { key: "erp", label: "ERP System" },
+          { key: "asset_management", label: "Asset Management" },
+          { key: "social_media", label: "Social Media Platform" },
         ].map((tab) => (
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 cursor-pointer ${activeTab === tab.key
-              ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg shadow-orange-500/50 scale-105'
-              : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/70 hover:scale-105 border border-gray-700/50'
-              }`}
+            className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 cursor-pointer ${
+              activeTab === tab.key
+                ? "bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg shadow-orange-500/50 scale-105"
+                : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70 hover:scale-105 border border-gray-700/50"
+            }`}
           >
             {tab.label}
           </button>
@@ -434,7 +596,9 @@ const PortfolioGallery = () => {
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
-              <h3 className="text-white text-xl font-bold mb-2">{item.title}</h3>
+              <h3 className="text-white text-xl font-bold mb-2">
+                {item.title}
+              </h3>
               <div className="flex items-center gap-2 text-sm text-purple-400">
                 <span>{item.images.length} images</span>
                 <span>•</span>
@@ -471,14 +635,16 @@ const PortfolioGallery = () => {
                 {/* Left: Main Image */}
                 <div className="lg:w-3/5 relative">
                   <div className="py-0">
-                    <p className="
+                    <p
+                      className="
                     text-gray-400 text-xs italic
                     leading-relaxed mb-3
-                  ">
-                      <span className="text-orange-400 font-medium text-center">{selectedItem.images[currentImageIndex].title}</span>
-
+                  "
+                    >
+                      <span className="text-orange-400 font-medium text-center">
+                        {selectedItem.images[currentImageIndex].title}
+                      </span>
                     </p>
-
                   </div>
 
                   <div className="relative aspect-video rounded-2xl overflow-hidden bg-gray-900/50 border border-gray-700/30 group">
@@ -487,7 +653,10 @@ const PortfolioGallery = () => {
                       onClick={() => setIsOpen(true)} // Click vào ảnh để phóng to
                     >
                       <img
-                        src={selectedItem.images[currentImageIndex].src || selectedItem.images[currentImageIndex]}
+                        src={
+                          selectedItem.images[currentImageIndex].src ||
+                          selectedItem.images[currentImageIndex]
+                        }
                         alt={selectedItem.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
@@ -543,8 +712,6 @@ const PortfolioGallery = () => {
                       {currentImageIndex + 1} / {selectedItem.images.length}
                     </div>
                   </div>
-
-
                 </div>
 
                 {/* Thêm Component Lightbox vào cuối Modal hoặc cuối Component */}
@@ -552,14 +719,16 @@ const PortfolioGallery = () => {
                   open={isOpen}
                   close={() => setIsOpen(false)}
                   index={currentImageIndex} // Đồng bộ với ảnh hiện tại
-                  slides={selectedItem.images.map(img => ({ src: img.src || img }))}
+                  slides={selectedItem.images.map((img) => ({
+                    src: img.src || img,
+                  }))}
                   plugins={[Zoom]} // Thêm tính năng Zoom
                   // Tùy chỉnh giao diện cho hợp với tone màu của bạn
                   styles={{
                     container: { backgroundColor: "rgba(0, 0, 0, .9)" },
                   }}
                   on={{
-                    view: ({ index }) => setCurrentImageIndex(index) // Đồng bộ ngược lại khi chuyển ảnh trong Lightbox
+                    view: ({ index }) => setCurrentImageIndex(index), // Đồng bộ ngược lại khi chuyển ảnh trong Lightbox
                   }}
                 />
                 {/* Right: Info and Thumbnails */}
@@ -570,35 +739,37 @@ const PortfolioGallery = () => {
                       {selectedItem.title}
                     </h3>
                     <p className="text-gray-300 text-sm leading-relaxed mb-3 whitespace-pre-line">
-                      {selectedItem.description.split('\n').map((line, index) => {
-                        if (line.trim() === 'User Stories:') {
+                      {selectedItem.description
+                        .split("\n")
+                        .map((line, index) => {
+                          if (line.trim() === "User Stories:") {
+                            return (
+                              <span
+                                key={index}
+                                className="block mt-2 mb-1 font-semibold text-orange-400"
+                              >
+                                {line}
+                              </span>
+                            );
+                          }
+
+                          if (line.trim() === "Module Overview:") {
+                            return (
+                              <span
+                                key={index}
+                                className="block mt-4 mb-1 font-semibold text-pink-400"
+                              >
+                                {line}
+                              </span>
+                            );
+                          }
+
                           return (
-                            <span
-                              key={index}
-                              className="block mt-2 mb-1 font-semibold text-orange-400"
-                            >
+                            <span key={index} className="block">
                               {line}
                             </span>
                           );
-                        }
-
-                        if (line.trim() === 'Module Overview:') {
-                          return (
-                            <span
-                              key={index}
-                              className="block mt-4 mb-1 font-semibold text-pink-400"
-                            >
-                              {line}
-                            </span>
-                          );
-                        }
-
-                        return (
-                          <span key={index} className="block">
-                            {line}
-                          </span>
-                        );
-                      })}
+                        })}
                     </p>
 
                     <div className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-orange-500/20 to-pink-500/20 border border-orange-500/30 text-orange-400 text-xs font-semibold capitalize">
@@ -608,16 +779,19 @@ const PortfolioGallery = () => {
 
                   {/* Thumbnails */}
                   <div>
-                    <h4 className="text-sm font-bold text-purple-400 mb-3">Gallery</h4>
+                    <h4 className="text-sm font-bold text-purple-400 mb-3">
+                      Gallery
+                    </h4>
                     <div className="grid grid-cols-3 gap-2">
                       {selectedItem.images.map((image, index) => (
                         <button
                           key={index}
                           onClick={() => selectImage(index)}
-                          className={`relative aspect-square rounded-lg overflow-hidden transition-all duration-300 ${currentImageIndex === index
-                            ? 'ring-2 ring-purple-500 ring-offset-2 ring-offset-gray-900 scale-95'
-                            : 'hover:scale-105 opacity-70 hover:opacity-100'
-                            }`}
+                          className={`relative aspect-square rounded-lg overflow-hidden transition-all duration-300 ${
+                            currentImageIndex === index
+                              ? "ring-2 ring-purple-500 ring-offset-2 ring-offset-gray-900 scale-95"
+                              : "hover:scale-105 opacity-70 hover:opacity-100"
+                          }`}
                         >
                           <img
                             src={image.src || image}

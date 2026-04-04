@@ -14,23 +14,43 @@ const ExperienceTree = () => {
   useEffect(() => {
     setExpandedItems({ 1: true });
   }, []);
-  const experiences = [
+ const experiences = [
     {
-      id: 1,
-      role: "Bussiness Analyst",
-      company: "HiAI Company",
-      location: "Ho Chi Minh City, Vietnam",
-      period: "4-2025 - 10-2025",
-      type: "Full-time",
-      description: "Analyzed business processes and gathered requirements to improve ERP solutions.",
-      achievements: [
-        "Conducted comprehensive business process analysis, leading to a 15% improvement in workflow efficiency.",
-        "Supported the development team in fixing front-end bugs based on user feedback."
-      ],
-      skills: ["Business Analysis", "ERP Systems", "Requirement Gathering", "UI Development Support "],
-      icon: Award
-    }
-  ];
+    id: 2,
+    role: "Fullstack Developer",
+    company: "Storm12.vn",
+    location: "Ho Chi Minh City, Vietnam",
+    period: "11-2025 - Present",
+    type: "Full-time",
+    description: "Developed and maintained an Asset Management System for the FA (Factory Automation) department of Mitsubishi Electric, covering key workflows such as asset lending, transfer, approval, liquidation, and auditing. Participated in full-cycle development from requirement implementation to product release.",
+    achievements: [
+      "Designed and implemented multiple asset management modules including Lending, Transfer, Approval, and Audit.",
+      "Built scalable backend services using .NET and ABP Framework following modular architecture principles.",
+      "Developed responsive and dynamic front-end features using Angular.",
+      "Collaborated with stakeholders to deliver features aligned with business requirements.",
+      "Successfully contributed to product release and deployment."
+    ],
+    skills: [".NET", "ABP Framework", "Angular", "Fullstack Development", "RESTful API", "SQL"],
+    icon: Award
+  },
+  {
+    id: 1,
+    role: "Bussiness Analyst",
+    company: "HiAI Company",
+    location: "Ho Chi Minh City, Vietnam",
+    period: "4-2025 - 10-2025",
+    type: "Full-time",
+    description: "Analyzed business processes and gathered requirements to improve ERP solutions.",
+    achievements: [
+      "Conducted comprehensive business process analysis, leading to a 15% improvement in workflow efficiency.",
+      "Supported the development team in fixing front-end bugs based on user feedback."
+    ],
+    skills: ["Business Analysis", "ERP Systems", "Requirement Gathering", "UI Development Support"],
+    icon: Award
+  }
+ 
+];
+
 
   return (
     <div className="max-w-5xl mx-auto">

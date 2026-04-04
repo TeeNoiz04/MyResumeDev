@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Lightbulb, Briefcase, Mail } from 'lucide-react';
-import ExperienceTree from './ExperienceTree.jsx';
-import PortfolioGallery from './PortfolioGallery.jsx';
-import GetInTouch from './GetInTouch.jsx';
-import AboutSection from './AboutSection.jsx';
-import AchievementSection from './AchievementSection.jsx';
+import React, { useState, useEffect } from "react";
+import { Menu, X, Lightbulb, Briefcase, Mail } from "lucide-react";
+import ExperienceTree from "./ExperienceTree.jsx";
+import PortfolioGallery from "./PortfolioGallery.jsx";
+import GetInTouch from "./GetInTouch.jsx";
+import AboutSection from "./AboutSection.jsx";
+import AchievementSection from "./AchievementSection.jsx";
+import AchievementRecap from "./RecapSection.jsx";
 import { motion } from "framer-motion";
 const Portfolio = () => {
   const containerVariants = {
@@ -12,8 +13,8 @@ const Portfolio = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -46,7 +47,7 @@ const Portfolio = () => {
 
           window.scrollTo({
             top: offsetPosition,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
         }
       }, 100);
@@ -58,7 +59,6 @@ const Portfolio = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-
             {/* Logo */}
             <div className="text-2xl font-bold">
               <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
@@ -68,12 +68,48 @@ const Portfolio = () => {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8 text-white">
-              <a href="#home" className="hover:text-orange-500 transition-colors">Home</a>
-              <a href="#about" className="hover:text-orange-500 transition-colors">About</a>
-              <a href="#resume" className="hover:text-orange-500 transition-colors">Resume</a>
-              <a href="#portfolio" className="hover:text-orange-500 transition-colors">Portfolio</a>
-              <a href="#achievements" className="hover:text-orange-500 transition-colors">Achievements</a>
-              <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
+              <a
+                href="#home"
+                className="hover:text-orange-500 transition-colors"
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                className="hover:text-orange-500 transition-colors"
+              >
+                About
+              </a>
+              <a
+                href="#resume"
+                className="hover:text-orange-500 transition-colors"
+              >
+                Resume
+              </a>
+              <a
+                href="#portfolio"
+                className="hover:text-orange-500 transition-colors"
+              >
+                Portfolio
+              </a>
+              <a
+                href="#achievementRecaps"
+                className="hover:text-orange-500 transition-colors"
+              >
+                Achievement Recap
+              </a>
+              <a
+                href="#achievements"
+                className="hover:text-orange-500 transition-colors"
+              >
+                Achievements
+              </a>
+              <a
+                href="#contact"
+                className="hover:text-orange-500 transition-colors"
+              >
+                Contact
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -90,35 +126,70 @@ const Portfolio = () => {
         {mobileMenuOpen && (
           <div className="md:hidden bg-gray-900 border-t border-gray-800">
             <div className="px-4 py-4 space-y-3 text-white">
-              <a href="#home" className="block hover:text-orange-500 transition-colors">Home</a>
-              <a href="#about" className="block hover:text-orange-500 transition-colors">About</a>
-              <a href="#resume" className="block hover:text-orange-500 transition-colors">Resume</a>
-              <a href="#portfolio" className="block hover:text-orange-500 transition-colors">Portfolio</a>
-              <a href="#achievements" className="block hover:text-orange-500 transition-colors">Achievements</a>
-              <a href="#contact" className="block hover:text-orange-500 transition-colors">Contact</a>
+              <a
+                href="#home"
+                className="block hover:text-orange-500 transition-colors"
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                className="block hover:text-orange-500 transition-colors"
+              >
+                About
+              </a>
+              <a
+                href="#resume"
+                className="block hover:text-orange-500 transition-colors"
+              >
+                Resume
+              </a>
+              <a
+                href="#portfolio"
+                className="block hover:text-orange-500 transition-colors"
+              >
+                Portfolio
+              </a>
+              <a
+                href="#achievements"
+                className="block hover:text-orange-500 transition-colors"
+              >
+                Achievements
+              </a>
+              <a
+                href="#contact"
+                className="block hover:text-orange-500 transition-colors"
+              >
+                Contact
+              </a>
             </div>
           </div>
         )}
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section
+        id="home"
+        className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      >
         <motion.div
           className="max-w-7xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false }} 
+          viewport={{ once: false }}
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
-
             {/* CỘT TRÁI: TEXT */}
             <div className="space-y-6">
               <motion.p variants={itemVariants} className="text-white/70 mb-2">
                 I AM THANH DUOC
               </motion.p>
 
-              <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-bold text-white">
+              <motion.h1
+                variants={itemVariants}
+                className="text-5xl md:text-6xl font-bold text-white"
+              >
                 Fullstack <span className="text-orange-500">Developer</span>
               </motion.h1>
 
@@ -134,10 +205,7 @@ const Portfolio = () => {
             </div>
 
             {/* CỘT PHẢI: IMAGE */}
-            <motion.div
-              className="relative"
-              variants={imageVariants}
-            >
+            <motion.div className="relative" variants={imageVariants}>
               <div className="w-full h-96 bg-gradient-to-br from-orange-500/20 to-transparent rounded-lg overflow-hidden border border-orange-500/10">
                 <img
                   src="img/avatar.jpg"
@@ -149,17 +217,14 @@ const Portfolio = () => {
               {/* Trang trí thêm: Một hình tròn phát sáng phía sau ảnh */}
               <div className="absolute -z-10 -top-10 -right-10 w-40 h-40 bg-orange-500/20 blur-[80px] rounded-full" />
             </motion.div>
-
           </div>
         </motion.div>
       </section>
-
 
       {/* About Section */}
       <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
         <AboutSection />
       </section>
-
 
       {/* Resume Section */}
       <section id="resume" className="py-16 px-4 sm:px-6 lg:px-8">
@@ -170,9 +235,18 @@ const Portfolio = () => {
       <section id="portfolio" className="py-16 px-4 sm:px-6 lg:px-8">
         <PortfolioGallery />
       </section>
-
-      {/* Achivement Section */
-        <section id="achievements" className="py-16 px-4 sm:px-6 lg:px-8 min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-orange-950 py-20 px-4">
+      {
+        /* Achivement ReCap */
+        <section id="achievementRecaps" className="py-16 px-4 sm:px-6 lg:px-8">
+          <AchievementRecap />
+        </section>
+      }
+      {
+        /* Achivement Section */
+        <section
+          id="achievements"
+          className="py-16 px-4 sm:px-6 lg:px-8 min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-orange-950 py-20 px-4"
+        >
           <AchievementSection />
         </section>
       }
