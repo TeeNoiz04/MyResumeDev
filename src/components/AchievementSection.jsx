@@ -7,7 +7,7 @@ export default function AchievementSection() {
   const achievements = [
     {
       icon: Trophy,
-      number: "1",
+      number: "3",
       title: "Projects Completed",
       description: "Successfully delivered projects across various domains"
     },
@@ -19,19 +19,19 @@ export default function AchievementSection() {
     },
     {
       icon: Star,
-      number: "3.66/4.0",
+      number: "3.68/4.0",
       title: "GPA",
       description: "Academic performance and excellence"
     },
     {
       icon: Target,
-      number: "5",
-      title: "Top 5 of Class",
-      description: "Ranked in the top 5 of the class with strong academic performance"
+      number: "3",
+      title: "Top 3 of Class",
+      description: "Ranked in the top 3 of the class with strong academic performance"
     },
     {
       icon: Zap,
-      number: "6+",
+      number: "11+",
       title: "Months Experience",
       description: "Hands-on experience through real-world projects"
     },

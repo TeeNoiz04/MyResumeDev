@@ -18,11 +18,11 @@ export default function AchievementRecap() {
     {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
       title: "Academic Excellence",
-      subtitle: "Top 5 Performance",
-      description: "Achieved top 5 ranking in class with a GPA of 3.66/4.0, demonstrating strong analytical thinking and problem-solving capabilities across technical and business domains.",
+      subtitle: "Top 3 Performance",
+      description: "Achieved top 3 ranking in class with a GPA of 3.68/4.0, demonstrating strong analytical thinking and problem-solving capabilities across technical and business domains.",
       stats: [
         { label: "GPA", value: "3.68/4.0" },
-        { label: "Class Rank", value: "Top 5" }
+        { label: "Class Rank", value: "Top 3" }
       ]
     },
     {
