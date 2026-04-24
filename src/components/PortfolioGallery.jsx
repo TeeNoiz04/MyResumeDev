@@ -473,6 +473,56 @@ const PortfolioGallery = () => {
         },
       ],
     },
+    {
+  id: 18,
+  category: "workflow_management",
+  title: "Workflow Approval - Budget Plan",
+  description: `
+    User Stories:
+    - As a requester, I want to submit a budget plan so that it can be reviewed and approved.
+    - As a manager, I want to approve or reject budget plans so that spending is controlled.
+    - As a finance officer, I want to validate budget conditions so that approvals follow company policies.
+    - As a system, I want to route approval requests based on conditions so that the correct approvers are assigned.
+
+    Module Overview:
+    This module provides a configurable workflow approval system for budget plans. 
+    It allows defining multi-level approval flows based on dynamic conditions such as budget amount, department, project type, or priority.
+    The system supports sequential and parallel approvals, auto-routing to appropriate approvers, and tracking approval history.
+
+    Key Features:
+    - Configurable approval workflows (multi-step, role-based).
+    - Conditional routing (e.g., amount > 100M requires Director approval).
+    - Support for approve / reject / request changes actions.
+    - SLA and timeout handling for each approval step.
+    - Full audit trail and approval history tracking.
+    - Notification integration (email, system alerts).
+
+    Business Rules:
+    - Budget plans below a defined threshold can be auto-approved or require only 1-level approval.
+    - High-value budgets require multi-level approvals (Manager → Director → CFO).
+    - Conditional logic supports combinations (AND/OR) for flexible workflow configuration.
+    - Rejected requests must include a reason and can be resubmitted after adjustment.
+
+    Conditions Examples:
+    - IF amount < 50,000,000 VND → Manager Approval
+    - IF amount >= 50,000,000 VND AND department = "IT" → Manager → Director
+    - IF amount >= 200,000,000 VND → Manager → Director → CFO
+  `,
+  images: [
+    {
+      src: "/img/workflow_budget.jpg",
+      title: "Workflow Budget Approval Overview"
+    },
+      {
+      src: "/img/workflow_budget_ent_settlement.png",
+      title: "Workflow Budget Approval Overview"
+    },
+    {
+      src: "/img/workflow_condition.png",
+      title: "Workflow Conditional Routing"
+    }
+  ]
+}
   ];
 
   const filteredItems =
@@ -564,7 +614,8 @@ const PortfolioGallery = () => {
           { key: "all", label: "See All" },
           { key: "erp", label: "ERP System" },
           { key: "asset_management", label: "Asset Management" },
-          { key: "social_media", label: "Social Media Platform" },
+          { key: "workflow_management", label: "Workflow Management" },
+          { key: "social_media", label: "Social Media Platform" },     
         ].map((tab) => (
           <button
             key={tab.key}
